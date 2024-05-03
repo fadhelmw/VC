@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fdfdfd;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin-right: 1rem;
+}
+h1 {
+  color: black;
+  margin-bottom: 0.5rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15rem auto;
+    height: 16rem;
+    background: #fff;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .card--avatar {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    padding: 0.3rem 1rem;
+  }
+  .card--avatar-cart {
+    width: 150%;
+    height: 5rem;
+    object-fit: cover;
+    padding: 0.3rem 1rem;
+  }
+  .card--title {
+    color: #222;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .card--price {
+    color: #222;
+    font-weight: 1000;
+    margin-bottom: 0rem;
+  }
+  .add-cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+  }
+  .card--link {
+    text-decoration: none;
+    background: #242424;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    cursor:pointer;
+  }
+  .card--link:hover::after{
+    content: url('https://api.iconify.design/bx/shopping-bag.svg?color=white');
+  }
+
+  
+  .footer-version-3 .nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #242424;
+    padding: 50px 57px 26px;
+  }
+
+/* CART */
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  background: white;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.2s;
+}
+
+.cart.active{
+  right: 0;
+}
+#cart-icon {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.cart-title{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cart-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc; /* Tambahkan border bottom */
+}
+
+.cart-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.cart-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.detail-box {
+  flex-grow: 1; 
+}
+
+.cart-product-title{
+  font-size:1rem;
+  text-transform: uppercase;
+
+}
+.cart-price{
+  font-weight: 500;
+}
+
+.cart-quantity {
+  border: 1px solid var(--text-color);
+  outline-color: black;
+  width: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  margin-right: 1rem; 
+}
+
+.cart-remove {
+  margin-top: auto; 
+  font-size: 24px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--text-color);
+}
+
+.total-title{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.total-price{
+  margin-left: 0.5rem;
+}
+
+.btn-buy{
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  background: #242424;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-buy:hover{
+   opacity: 0.8;
+}
+
+#close-cart{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.product-box{
+  position: relative;
+}
+.product-box:hover{
+  padding: 10px;
+  border: 1px solid var(--text-color);
+  transition: 0.4s;
+}
+.product-img{
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
