@@ -1,5 +1,5 @@
-const container = document.querySelector(".container");
-const vaults = [
+const container = document.querySelector(".container"); //container daftar barang yang ditampilkan
+const vaults = [ //array
   { namev: "Nike Dunk Low White/Blue", imagev: "images/1.png", prices: "250" },
   { namev: "Nike Dunk Low Yellow/Blue", imagev: "images/2.png", prices: "300" },
   { namev: "Nike Dunk Low Blue/White", imagev: "images/3.png", prices: "150" },
@@ -19,7 +19,7 @@ const vaults = [
   { namev: "Nike Dunk Low Olive/Green", imagev: "images/9.png", prices: "270" },
 ];
 
-const showVaults = () => {
+const showVaults = () => { //fungsi yang menampilkan daftar barang ke dalam kelas card
   let output = "";
   vaults.forEach(({ namev, imagev, prices }) => {
     output += `
@@ -36,7 +36,7 @@ const showVaults = () => {
 
 document.addEventListener("DOMContentLoaded", showVaults);
 
-// Setup cart functionality
+// fungsi yang mengatur semua pada cart
 function setupCart() {
   const cartIcon = document.querySelector("#cart-icon");
   const cart = document.querySelector(".cart");
@@ -74,7 +74,7 @@ function setupCart() {
     };
   });
 }
-
+//fungsi yang dipanggil saat buy button di click 
 function buyButtonClicked() {
   alert("Your order is placed");
   const cartContent = document.querySelector(".cart-content");
@@ -82,7 +82,7 @@ function buyButtonClicked() {
     cartContent.removeChild(cartContent.firstChild);
   }
 }
-
+//fungsi menghapus barang pada cart
 function removeCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.parentElement.remove();
@@ -94,7 +94,7 @@ function quantityChanged(event) {
     input.value = 1;
   }
 }
-
+//fungsi menambahkan item pada cart
 function addCartClicked(event) {
   const link = event.target;
   const namev = link.dataset.name;
@@ -102,7 +102,7 @@ function addCartClicked(event) {
   const imagev = link.parentElement.querySelector(".card--avatar").src;
   addProductToCart(namev, prices, imagev);
 }
-
+//fungsi menampilkan detail item pada cart
 function addProductToCart(namev, prices, imagev) {
   const cartShopBox = document.createElement("div");
   cartShopBox.classList.add("cart-box");

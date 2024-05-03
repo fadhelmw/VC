@@ -1,5 +1,5 @@
 const staticVaults = "vaults-site-v1"
-const assets = [
+const assets = [ 
   "/",
   "/index.html",
   "/about.html",
